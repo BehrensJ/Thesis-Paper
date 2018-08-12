@@ -1,0 +1,194 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            LMU-Vorlage              %%
+%%                                     %%
+%%         zur Erstellung einer        %%
+%%   Dissertation mit pdflatex/latex   %%
+%%                                     %%
+%%  (2002) Robert Dahlke               %%
+%%         & Sigmund Stintzing         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{book}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Zusaetzliche Pakete  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[utf8]{inputenc}
+\usepackage{a4wide}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{german}
+\usepackage[bookmarks]{hyperref}
+%\usepackage[onehalfspacing]{setspace}
+\usepackage{acronym}
+\usepackage{chngcntr}
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmax}{argmax} % thin space, limits underneath in displays
+
+\counterwithin{figure}{section}
+\setlength{\parindent}{0pt} % sorgt dafür das nach Absatz nicht eingerückt wird
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Definition der Kopfzeile %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{fancyplain}
+\renewcommand{\chaptermark}[1]%
+         {\markboth{\thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]%
+         {\markright{\thesection\ #1}}
+\lhead[\fancyplain{}{\bfseries\thepage}]%
+    {\fancyplain{}{\bfseries\rightmark}}
+\rhead[\fancyplain{}{\bfseries\leftmark}]%
+    {\fancyplain{}{\bfseries\thepage}}
+\cfoot{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Definition des Deckblattes und der Titelseite  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\LMUTitle}[9]{
+  \thispagestyle{empty}
+  \vspace*{\stretch{1}}
+  {\parindent0cm
+   \rule{\linewidth}{.7ex}}
+  \begin{flushright}
+
+    \vspace*{\stretch{1}}
+    \sffamily\bfseries\Huge
+    #1\\
+    \vspace*{\stretch{1}}
+    \sffamily\bfseries\large
+    #2
+    \vspace*{\stretch{1}}
+  \end{flushright}
+  \rule{\linewidth}{.7ex}
+  \vspace*{\stretch{5}}
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{logo_ub.png}
+    \qquad \quad
+    \includegraphics[width=0.15\textwidth]{bips-logo.png}
+  \end{center}
+  \vspace*{\stretch{1}}
+  \begin{center}\sffamily\LARGE{#5}\end{center}
+  \newpage
+  \thispagestyle{empty}
+
+  \cleardoublepage
+  \thispagestyle{empty}
+
+  \vspace*{\stretch{1}}
+  {\parindent0cm
+  \rule{\linewidth}{.7ex}}
+  \begin{flushright}
+    \vspace*{\stretch{1}}
+    \sffamily\bfseries\Huge
+    #1\\
+    \vspace*{\stretch{1}}
+    \sffamily\bfseries\large
+    #2
+    \vspace*{\stretch{1}}
+  \end{flushright}
+  \rule{\linewidth}{.7ex}
+
+  \vspace*{\stretch{3}}
+  \begin{center}
+    \Large Masterarbeit\\
+    \Large im Studiengang Medical Biometry/Biostatistics \\
+    \Large am #4\\
+    \Large der Universit"at Bremen\\
+    \vspace*{\stretch{1}}
+    \Large vorgelegt von\\
+    \Large #2\\
+    \Large aus #3\\
+    \vspace*{\stretch{2}}
+    \Large Bremen, den #6
+  \end{center}
+
+  \newpage
+  \thispagestyle{empty}
+
+  \vspace*{\stretch{1}}
+
+  \begin{flushleft}
+    \large Erstgutachter:  #7 \\[1mm]
+    \large Zweitgutachter: #8 \\[1mm]
+    \large Tag der m\"undlichen Pr\"ufung: #9\\
+  \end{flushleft}
+
+  \cleardoublepage
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Beginn des Dokuments  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+  \frontmatter
+
+
+  \LMUTitle
+      {Vergleich selbst Erstellter Algorithmen mit angepassten Methodiken aus der Literatur zur automatisierten Erkennung von Nichttragezeiten und Schlafzeiten in ActivPal Akzelerometern-Daten \\
+       Arbeitstitel}               % Titel der Arbeit
+      {Jan Behrens}                       % Vor- und Nachname des Autors
+      {Bremen}                             % Geburtsort des Autors
+      {Fachbereich 3 Mathematik/Informatik}     % Name der Fakultaet
+      {Bremen 2018}                          % Ort und Jahr der Erstellung
+      {dd.mm.yyyy}                            % Tag der Abgabe
+      {??}                          % Name des Erstgutachters
+      {??}                         % Name des Zweitgutachters
+      {dd.mm.yyyy}                         % Datum der muendlichen Pruefung
+
+ \chapter*{Eidesstattliche Erklärung}
+    Hiermit erkläre ich an Eides Statt, dass ich die vorliegende Arbeit selbstständig und nur unter Zuhilfenahme der ausgewiesenen Hilfsmittel angefertigt habe. Sämtliche Stellen der Arbeit, die im Wortlaut oder dem Sinn nach anderen gedruckten oder im Internet verfügbaren Werken entnommen sind, habe ich durch genaue Quellenangaben kenntlich gemacht. Zudem wurde diese Arbeit bislang noch nicht veröffentlicht.
+    
+    \vspace{30mm} 
+    
+    Ort, Datum  \hspace{60mm} Vorname Nachname
+    
+  \tableofcontents
+  \markboth{Inhaltsverzeichnis}{Inhaltsverzeichnis}
+
+  \markboth{Abkürzungsverzeichnis}{Abkürzungsverzeichnis}
+  \include{Acronyms}
+
+  \listoffigures
+  \markboth{Abbildungsverzeichnis}{Abbildungsverzeichnis}
+
+  \listoftables
+  \markboth{Tabellenverzeichnis}{Tabellenverzeichnis}
+  \cleardoublepage
+
+
+  \markboth{Zusammenfassung}{Zusammenfassung}
+  \include{zusammenfassung}
+
+
+  \mainmatter\setcounter{page}{1}
+  \include{kap_01}
+  \include{kap_02}
+  \include{kap_03}
+  \include{kap_04}
+  \include{kap_05}
+  \include{kap_06}
+
+
+  
+  \include{bibliographie}
+  \markboth{}{}
+
+
+  %\include{danksagung}
+  \include{anhang}
+  \backmatter
+  %\include{lebenslauf}
+
+
+\end{document}

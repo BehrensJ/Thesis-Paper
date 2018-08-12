@@ -1,0 +1,65 @@
+\chapter{Zeitplan und Durchführung}
+
+\section{Zeitplan}
+
+
+
+
+\section{Durchführung}
+
+\subsection{Erhebung der Akzelerometerdaten}
+
+\subsubsection{Anlegen der Akzelerometer}
+Den Probanden wurde der Akzelerometer überreicht, anschließend wurden die Geräte je nach Wunsch des Probanden vom Probanden selber oder vom Studienpersonal angelegt.
+Dabei werden die ActivPal\textsuperscript{TM} in eine Gummihülle gestölpt und die Öffnung der Gummihülle auf die vorderseite des Gerätes um gelegt. Der Akzelerometer wird dann mit der Front vorne und Rundung nach oben auf den 7,5cm - 8,5cm breiten Klebestreifen befestigt. Dieser wird dann mittig auf dem linken Oberschenkel angebracht. Dabei wird darauf hingewiesen, bzw. geachtet, das sich der Akzelerometer in einer geraden Linie mit mit Fuß und Knie, bei geradem Stand, befindet. Nach dem Anlegen wurde die Uhrzeit notiert und den Probanden Ersatz Gummihüllen und Klebestreifen überreicht, sodass diese das Gerät im Laufe der Studie wiederholt ab- und wieder anlegen werden konnten.
+
+
+\subsubsection{Auslesen der Akzelerometer}
+Die erhobenen Akzelerometer Daten wurden mit PALbatch\textsuperscript{TM} Version 8.10.3.20 ausgelesen, für die weitere Verwendung sind vorallem die 15 Sekunden Epochen und die Rohdaten-Datein von Bedeutung. Anschließend wurden die Daten mit R in eine für die Auswertung geignete Form umgewandelt. Da die Algorithmen des machinellen lernens nicht für Zeitreihen ausgelegt sind wurden die Daten in ein entsprechendes Format umgewandelt in denen jeweils .... Minuten vor und nach der jeweiligen Epoche betrachtet werden konnten.
+
+
+\subsubsection{Visulaisierung und manuelle Auswertung von Nichttragezeiten und Schlafzeiten}
+Damit die Akzelerometerdaten dagestellt werden konnten wurden im ersten Schritt die Vector Magnitude (VM) über die 3 Messrichtungen bestimmt. Diese wurde bestimmt als: $$VM = \sqrt{g_{x}^2 + g_{y}^2 + g_{z}^2} $$ Die VM und die Akzelerometerwerte entlang der 3 Messachsen wurden über die gesamten Zeitdauer aller Messtage auf verschiedenen Graphiken dargestellt. Außerdem wurden explizit die Werte .... Minuten vor und nach den angegebenen Schlaf- und Nichttragezeiten in Graphiken dargestellt. Anhand dieser Graphiken wurde manuell die Zeit ermittelt in denen Schlaf- und Nichttrragezeiten vermutet werden. Bei beiden Ereignissen handelt es sich um Ereignisse mit einer allgemeinen geringen Aktivität, daher wurden in den betrachteten Zeitintervallen nach einem zusammenhängenden Teilintervall mit geringer Aktivität gesucht. Dabei wurden die manuell geschätzen Zeiten in der Nähe der angegebenen Grenzen gesucht.
+
+Zum Vergleich wurden die die Werte der 3 Messachsen und die VM aus den 15s Epoch Datein und aus den Rohdaten erstellt, jedoch besteht das Problem, das in den Rohdaten keine Angabe über die Zeit enthalten sind. Aufgrund der fehlenden Zeitangaben in den Rohdaten musste die Zeit aus den Epochen-Datein abgeschätz werden, daher kann es aber zu einer Verschiebung von bis zu 15 Sekunden kommen.
+
+
+
+\subsection{Plausibilitätschecks und Anpassung der Daten}
+
+Zur Kontrolle der Angaben in den Fragebögen wurden zum einen die Angaben im Interview-Fragebogen mit den Angaben des PSQI-Fragebogens verglichen und es kam zu einem Abgleich mit den vordefinierten Kategorien. Sollten Werte für Alter, Größe, Gewicht außerhalb einer realistischen Werte bereiches liegen wurden diese überprüft und ggf. durch ein Missing-Value ersetzt.
+Es wurde auf eine Imputation von Werten innerhalb der Studie, auf Grund der geringen Anzahl von Datensätzen verzichtet. 
+Bei den Tragetagebuch-Werten wurde auf Überschneidungen zwischen Schlaf und Nichttragezeiten überprüft und manuell mit den Akzelerometer-Daten abgeglichen. Sollten Einträge im Tragetagebuch nicht realistisch erscheinen wurden das jeweilige (Schlaf- oder Nichttragezeit-) Event in der manuell erstellten Analysevariable ignoriert. 
+
+
+\subsubsection{Erstellung Vergleichsdatensätze}
+
+
+
+\subsection{Training der Erkennungs-algorithmen}
+
+\subsubsection{Training der Literatur Algorithmen}
+
+... Nichttragezeit - Platzhaltzer ... 
+
+\bigskip
+
+... Schlafzeit - Platzhaltzer ...
+
+\subsubsection{Training der Algorithmen des machinellen lernens}
+
+... Nichttragezeit - Platzhaltzer ... 
+
+\bigskip
+
+... Schlafzeit - Platzhaltzer ...
+
+
+
+
+\subsection{Erstellung Analyse-Datensätze}
+
+\subsubsection{Vergleichsdatensatz der Vorhersagen zu den erhobenen Angaben}
+
+
+\subsubsection{Event-Datensätze}
